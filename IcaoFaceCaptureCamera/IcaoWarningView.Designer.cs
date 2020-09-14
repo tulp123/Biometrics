@@ -77,251 +77,255 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(155, 314);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(177, 419);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // lblFaceDetected
             // 
             this.lblFaceDetected.AutoSize = true;
             this.lblFaceDetected.Location = new System.Drawing.Point(3, 0);
             this.lblFaceDetected.Name = "lblFaceDetected";
-            this.lblFaceDetected.Size = new System.Drawing.Size(85, 12);
+            this.lblFaceDetected.Size = new System.Drawing.Size(98, 17);
             this.lblFaceDetected.TabIndex = 0;
             this.lblFaceDetected.Text = "Face detected";
             // 
             // lblExpression
             // 
             this.lblExpression.AutoSize = true;
-            this.lblExpression.Location = new System.Drawing.Point(3, 12);
+            this.lblExpression.Location = new System.Drawing.Point(3, 17);
             this.lblExpression.Name = "lblExpression";
-            this.lblExpression.Size = new System.Drawing.Size(69, 12);
+            this.lblExpression.Size = new System.Drawing.Size(77, 17);
             this.lblExpression.TabIndex = 1;
             this.lblExpression.Text = "Expression";
             // 
             // lblDarkGlasses
             // 
             this.lblDarkGlasses.AutoSize = true;
-            this.lblDarkGlasses.Location = new System.Drawing.Point(3, 24);
+            this.lblDarkGlasses.Location = new System.Drawing.Point(3, 34);
             this.lblDarkGlasses.Name = "lblDarkGlasses";
-            this.lblDarkGlasses.Size = new System.Drawing.Size(81, 12);
+            this.lblDarkGlasses.Size = new System.Drawing.Size(93, 17);
             this.lblDarkGlasses.TabIndex = 2;
             this.lblDarkGlasses.Text = "Dark Glasses";
             // 
             // lblBlink
             // 
             this.lblBlink.AutoSize = true;
-            this.lblBlink.Location = new System.Drawing.Point(3, 36);
+            this.lblBlink.Location = new System.Drawing.Point(3, 51);
             this.lblBlink.Name = "lblBlink";
-            this.lblBlink.Size = new System.Drawing.Size(32, 12);
+            this.lblBlink.Size = new System.Drawing.Size(38, 17);
             this.lblBlink.TabIndex = 3;
             this.lblBlink.Text = "Blink";
             // 
             // lblMouthOpen
             // 
             this.lblMouthOpen.AutoSize = true;
-            this.lblMouthOpen.Location = new System.Drawing.Point(3, 48);
+            this.lblMouthOpen.Location = new System.Drawing.Point(3, 68);
             this.lblMouthOpen.Name = "lblMouthOpen";
-            this.lblMouthOpen.Size = new System.Drawing.Size(74, 12);
+            this.lblMouthOpen.Size = new System.Drawing.Size(86, 17);
             this.lblMouthOpen.TabIndex = 4;
             this.lblMouthOpen.Text = "Mouth Open";
             // 
             // lblLookingAway
             // 
             this.lblLookingAway.AutoSize = true;
-            this.lblLookingAway.Location = new System.Drawing.Point(3, 60);
+            this.lblLookingAway.Location = new System.Drawing.Point(3, 85);
             this.lblLookingAway.Name = "lblLookingAway";
-            this.lblLookingAway.Size = new System.Drawing.Size(85, 12);
+            this.lblLookingAway.Size = new System.Drawing.Size(95, 17);
             this.lblLookingAway.TabIndex = 18;
             this.lblLookingAway.Text = "Looking Away";
             // 
             // lblRedEye
             // 
             this.lblRedEye.AutoSize = true;
-            this.lblRedEye.Location = new System.Drawing.Point(3, 72);
+            this.lblRedEye.Location = new System.Drawing.Point(3, 102);
             this.lblRedEye.Name = "lblRedEye";
-            this.lblRedEye.Size = new System.Drawing.Size(53, 12);
+            this.lblRedEye.Size = new System.Drawing.Size(62, 17);
             this.lblRedEye.TabIndex = 19;
             this.lblRedEye.Text = "Red Eye";
             // 
             // lblFaceDarkness
             // 
             this.lblFaceDarkness.AutoSize = true;
-            this.lblFaceDarkness.Location = new System.Drawing.Point(3, 84);
+            this.lblFaceDarkness.Location = new System.Drawing.Point(3, 119);
             this.lblFaceDarkness.Name = "lblFaceDarkness";
-            this.lblFaceDarkness.Size = new System.Drawing.Size(90, 12);
+            this.lblFaceDarkness.Size = new System.Drawing.Size(103, 17);
             this.lblFaceDarkness.TabIndex = 20;
             this.lblFaceDarkness.Text = "Face Darkness";
             // 
             // lblUnnaturalSkinTone
             // 
             this.lblUnnaturalSkinTone.AutoSize = true;
-            this.lblUnnaturalSkinTone.Location = new System.Drawing.Point(3, 96);
+            this.lblUnnaturalSkinTone.Location = new System.Drawing.Point(3, 136);
             this.lblUnnaturalSkinTone.Name = "lblUnnaturalSkinTone";
-            this.lblUnnaturalSkinTone.Size = new System.Drawing.Size(119, 12);
+            this.lblUnnaturalSkinTone.Size = new System.Drawing.Size(138, 17);
             this.lblUnnaturalSkinTone.TabIndex = 21;
             this.lblUnnaturalSkinTone.Text = "Unnatural Skin Tone";
             // 
             // lblColorsWashedOut
             // 
             this.lblColorsWashedOut.AutoSize = true;
-            this.lblColorsWashedOut.Location = new System.Drawing.Point(3, 108);
+            this.lblColorsWashedOut.Location = new System.Drawing.Point(3, 153);
             this.lblColorsWashedOut.Name = "lblColorsWashedOut";
-            this.lblColorsWashedOut.Size = new System.Drawing.Size(114, 12);
+            this.lblColorsWashedOut.Size = new System.Drawing.Size(131, 17);
             this.lblColorsWashedOut.TabIndex = 22;
             this.lblColorsWashedOut.Text = "Colors Washed Out";
             // 
             // lblPixelation
             // 
             this.lblPixelation.AutoSize = true;
-            this.lblPixelation.Location = new System.Drawing.Point(3, 120);
+            this.lblPixelation.Location = new System.Drawing.Point(3, 170);
             this.lblPixelation.Name = "lblPixelation";
-            this.lblPixelation.Size = new System.Drawing.Size(60, 12);
+            this.lblPixelation.Size = new System.Drawing.Size(68, 17);
             this.lblPixelation.TabIndex = 23;
             this.lblPixelation.Text = "Pixelation";
             // 
             // lblSkinReflection
             // 
             this.lblSkinReflection.AutoSize = true;
-            this.lblSkinReflection.Location = new System.Drawing.Point(3, 132);
+            this.lblSkinReflection.Location = new System.Drawing.Point(3, 187);
             this.lblSkinReflection.Name = "lblSkinReflection";
-            this.lblSkinReflection.Size = new System.Drawing.Size(88, 12);
+            this.lblSkinReflection.Size = new System.Drawing.Size(102, 17);
             this.lblSkinReflection.TabIndex = 24;
             this.lblSkinReflection.Text = "Skin Reflection";
             // 
             // lblGlassesReflection
             // 
             this.lblGlassesReflection.AutoSize = true;
-            this.lblGlassesReflection.Location = new System.Drawing.Point(3, 144);
+            this.lblGlassesReflection.Location = new System.Drawing.Point(3, 204);
             this.lblGlassesReflection.Name = "lblGlassesReflection";
-            this.lblGlassesReflection.Size = new System.Drawing.Size(111, 12);
+            this.lblGlassesReflection.Size = new System.Drawing.Size(126, 17);
             this.lblGlassesReflection.TabIndex = 25;
             this.lblGlassesReflection.Text = "Glasses Reflection";
             // 
             // lblRoll
             // 
             this.lblRoll.AutoSize = true;
-            this.lblRoll.Location = new System.Drawing.Point(3, 156);
+            this.lblRoll.Location = new System.Drawing.Point(3, 221);
             this.lblRoll.Name = "lblRoll";
-            this.lblRoll.Size = new System.Drawing.Size(26, 12);
+            this.lblRoll.Size = new System.Drawing.Size(32, 17);
             this.lblRoll.TabIndex = 5;
             this.lblRoll.Text = "Roll";
             // 
             // lblYaw
             // 
             this.lblYaw.AutoSize = true;
-            this.lblYaw.Location = new System.Drawing.Point(3, 168);
+            this.lblYaw.Location = new System.Drawing.Point(3, 238);
             this.lblYaw.Name = "lblYaw";
-            this.lblYaw.Size = new System.Drawing.Size(30, 12);
+            this.lblYaw.Size = new System.Drawing.Size(34, 17);
             this.lblYaw.TabIndex = 6;
             this.lblYaw.Text = "Yaw";
             // 
             // lblPitch
             // 
             this.lblPitch.AutoSize = true;
-            this.lblPitch.Location = new System.Drawing.Point(3, 180);
+            this.lblPitch.Location = new System.Drawing.Point(3, 255);
             this.lblPitch.Name = "lblPitch";
-            this.lblPitch.Size = new System.Drawing.Size(33, 12);
+            this.lblPitch.Size = new System.Drawing.Size(39, 17);
             this.lblPitch.TabIndex = 7;
             this.lblPitch.Text = "Pitch";
             // 
             // lblTooClose
             // 
             this.lblTooClose.AutoSize = true;
-            this.lblTooClose.Location = new System.Drawing.Point(3, 192);
+            this.lblTooClose.Location = new System.Drawing.Point(3, 272);
             this.lblTooClose.Name = "lblTooClose";
-            this.lblTooClose.Size = new System.Drawing.Size(64, 12);
+            this.lblTooClose.Size = new System.Drawing.Size(72, 17);
             this.lblTooClose.TabIndex = 8;
             this.lblTooClose.Text = "Too Close";
+            this.lblTooClose.Click += new System.EventHandler(this.lblTooClose_Click);
             // 
             // lblTooFar
             // 
             this.lblTooFar.AutoSize = true;
-            this.lblTooFar.Location = new System.Drawing.Point(3, 204);
+            this.lblTooFar.Location = new System.Drawing.Point(3, 289);
             this.lblTooFar.Name = "lblTooFar";
-            this.lblTooFar.Size = new System.Drawing.Size(49, 12);
+            this.lblTooFar.Size = new System.Drawing.Size(58, 17);
             this.lblTooFar.TabIndex = 9;
             this.lblTooFar.Text = "Too Far";
             // 
             // lblTooNorth
             // 
             this.lblTooNorth.AutoSize = true;
-            this.lblTooNorth.Location = new System.Drawing.Point(3, 216);
+            this.lblTooNorth.Location = new System.Drawing.Point(3, 306);
             this.lblTooNorth.Name = "lblTooNorth";
-            this.lblTooNorth.Size = new System.Drawing.Size(61, 12);
+            this.lblTooNorth.Size = new System.Drawing.Size(72, 17);
             this.lblTooNorth.TabIndex = 10;
             this.lblTooNorth.Text = "Too North";
             // 
             // lblTooSouth
             // 
             this.lblTooSouth.AutoSize = true;
-            this.lblTooSouth.Location = new System.Drawing.Point(3, 228);
+            this.lblTooSouth.Location = new System.Drawing.Point(3, 323);
             this.lblTooSouth.Name = "lblTooSouth";
-            this.lblTooSouth.Size = new System.Drawing.Size(63, 12);
+            this.lblTooSouth.Size = new System.Drawing.Size(74, 17);
             this.lblTooSouth.TabIndex = 11;
             this.lblTooSouth.Text = "Too South";
             // 
             // lblTooWest
             // 
             this.lblTooWest.AutoSize = true;
-            this.lblTooWest.Location = new System.Drawing.Point(3, 240);
+            this.lblTooWest.Location = new System.Drawing.Point(3, 340);
             this.lblTooWest.Name = "lblTooWest";
-            this.lblTooWest.Size = new System.Drawing.Size(58, 12);
+            this.lblTooWest.Size = new System.Drawing.Size(69, 17);
             this.lblTooWest.TabIndex = 12;
             this.lblTooWest.Text = "Too West";
             // 
             // lblTooEast
             // 
             this.lblTooEast.AutoSize = true;
-            this.lblTooEast.Location = new System.Drawing.Point(3, 252);
+            this.lblTooEast.Location = new System.Drawing.Point(3, 357);
             this.lblTooEast.Name = "lblTooEast";
-            this.lblTooEast.Size = new System.Drawing.Size(56, 12);
+            this.lblTooEast.Size = new System.Drawing.Size(65, 17);
             this.lblTooEast.TabIndex = 13;
             this.lblTooEast.Text = "Too East";
             // 
             // lblSharpness
             // 
             this.lblSharpness.AutoSize = true;
-            this.lblSharpness.Location = new System.Drawing.Point(3, 264);
+            this.lblSharpness.Location = new System.Drawing.Point(3, 374);
             this.lblSharpness.Name = "lblSharpness";
-            this.lblSharpness.Size = new System.Drawing.Size(66, 12);
+            this.lblSharpness.Size = new System.Drawing.Size(76, 17);
             this.lblSharpness.TabIndex = 14;
             this.lblSharpness.Text = "Sharpness";
             // 
             // lblGrayscaleDensity
             // 
             this.lblGrayscaleDensity.AutoSize = true;
-            this.lblGrayscaleDensity.Location = new System.Drawing.Point(3, 276);
+            this.lblGrayscaleDensity.Location = new System.Drawing.Point(3, 391);
             this.lblGrayscaleDensity.Name = "lblGrayscaleDensity";
-            this.lblGrayscaleDensity.Size = new System.Drawing.Size(109, 12);
+            this.lblGrayscaleDensity.Size = new System.Drawing.Size(123, 17);
             this.lblGrayscaleDensity.TabIndex = 15;
             this.lblGrayscaleDensity.Text = "Grayscale Density";
             // 
             // lblSaturation
             // 
             this.lblSaturation.AutoSize = true;
-            this.lblSaturation.Location = new System.Drawing.Point(3, 288);
+            this.lblSaturation.Location = new System.Drawing.Point(147, 0);
             this.lblSaturation.Name = "lblSaturation";
-            this.lblSaturation.Size = new System.Drawing.Size(61, 12);
+            this.lblSaturation.Size = new System.Drawing.Size(25, 68);
             this.lblSaturation.TabIndex = 16;
             this.lblSaturation.Text = "Saturation";
             // 
             // lblBackgroundUniformity
             // 
             this.lblBackgroundUniformity.AutoSize = true;
-            this.lblBackgroundUniformity.Location = new System.Drawing.Point(3, 300);
+            this.lblBackgroundUniformity.Location = new System.Drawing.Point(147, 68);
             this.lblBackgroundUniformity.Name = "lblBackgroundUniformity";
-            this.lblBackgroundUniformity.Size = new System.Drawing.Size(131, 12);
+            this.lblBackgroundUniformity.Size = new System.Drawing.Size(27, 153);
             this.lblBackgroundUniformity.TabIndex = 17;
             this.lblBackgroundUniformity.Text = "Background uniformity";
             // 
             // IcaoWarningView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "IcaoWarningView";
-            this.Size = new System.Drawing.Size(155, 314);
+            this.Size = new System.Drawing.Size(177, 419);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

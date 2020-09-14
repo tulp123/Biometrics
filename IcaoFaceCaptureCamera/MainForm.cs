@@ -20,10 +20,12 @@ namespace IcaoFaceCaptureCamera
         #region Private fields
         
         private NBiometricClient _biometricClient;
-        private NSubject _subject = null;
-        private NFace _face = null;
+        private NSubject _subject ;
+        private NFace _face;
         private NFace _segmentedFace;
         private NDeviceManager _deviceManager;
+
+        private Dictionary<string, NFace> capturedFaces = new Dictionary<string, NFace>();
         
         #endregion
 
@@ -38,7 +40,7 @@ namespace IcaoFaceCaptureCamera
             {
                 BiometricTypes = NBiometricType.Face,
                 UseDeviceManager = true,
-                //FacesCheckIcaoCompliance = true,
+                FacesCheckIcaoCompliance = true,
                 FacesQualityThreshold = byte.Parse("0"),
             };
 
@@ -48,7 +50,7 @@ namespace IcaoFaceCaptureCamera
             {
                 try
                 {
-                    nViewZoomSlider1.View = faceView;
+                    nViewZoomSlider1.View = fvPreview;
                     lblStatus.Text = string.Empty;
                     _deviceManager = _biometricClient.DeviceManager;
                     saveImageDialog.Filter = NImages.GetSaveFileFilterString();
@@ -78,10 +80,7 @@ namespace IcaoFaceCaptureCamera
                     cbCameras.Items.Add(device);
                 }
 
-                Console.WriteLine(_biometricClient.FaceCaptureDevice.ToString());
-                Console.WriteLine(cbCameras.Items.Count);
-
-                if (_biometricClient.FaceCaptureDevice == null &&  cbCameras.Items.Count > 0)
+                if (_biometricClient.FaceCaptureDevice != null &&  cbCameras.Items.Count > 0)
                 {
                     cbCameras.SelectedIndex = cbCameras.Items.IndexOf(_biometricClient.FaceCaptureDevice);
                 }
@@ -112,9 +111,15 @@ namespace IcaoFaceCaptureCamera
             if (status == NBiometricStatus.Ok)
             {
                 _segmentedFace = _subject.Faces[1];
-                faceView.Face = _segmentedFace;
+                fvPreview.Face = _segmentedFace;
                 icaoWarningView.Face = _segmentedFace;
-                FaceViewFront.Face = _segmentedFace;
+                fvFront.Face = _segmentedFace;
+                fvLeftRoll.Face = _segmentedFace;
+                fvRightRoll.Face = _segmentedFace;
+                fvLeftYaw.Face = _segmentedFace;
+                fvRightYaw.Face = _segmentedFace;
+                fvDownPitch.Face = _segmentedFace;
+                fvUpPitch.Face = _segmentedFace;
             }
 
             lblStatus.Text = status.ToString();
@@ -134,6 +139,12 @@ namespace IcaoFaceCaptureCamera
 
         private async void BtnStartClickAsync(object sender, EventArgs e)
         {
+            if (capturedFaces.Count == 7)
+            {
+                MessageBox.Show("All Faces captured.");
+                return;
+            }
+
             if (_biometricClient.FaceCaptureDevice == null)
             {
                 MessageBox.Show(@"Please select camera from the list");
@@ -141,17 +152,17 @@ namespace IcaoFaceCaptureCamera
             }
 
             // Set face capture from stream
-            _face = new NFace { CaptureOptions = NBiometricCaptureOptions.Stream | NBiometricCaptureOptions.Manual };
+            _face = new NFace { CaptureOptions = NBiometricCaptureOptions.Stream };
             _subject = new NSubject();
             _subject.Faces.Add(_face);
-            faceView.Face = _face;
+            fvPreview.Face = _face;
             icaoWarningView.Face = _face;
 
-            //_biometricClient.FacesCheckIcaoCompliance = true;
+            _biometricClient.FacesCheckIcaoCompliance = true;
 
-            //var task = _biometricClient.CreateTask(NBiometricOperations.Capture | NBiometricOperations.Segment | NBiometricOperations.CreateTemplate, _subject);
-            var task = _biometricClient.CreateTask(NBiometricOperations.Capture | NBiometricOperations.Segment, _subject);
-            lblStatus.Text = string.Empty;
+            var task = _biometricClient.CreateTask(NBiometricOperations.Capture | NBiometricOperations.Segment | NBiometricOperations.CreateTemplate, _subject);
+            /*var task = _biometricClient.CreateTask(NBiometricOperations.Capture | NBiometricOperations.Segment, _subject);*/
+             lblStatus.Text = string.Empty;
             EnableControls(true);
             try
             {
@@ -180,6 +191,7 @@ namespace IcaoFaceCaptureCamera
         {
             if (saveTemplateDialog.ShowDialog() == DialogResult.OK)
             {
+                var tmp = _subject.GetTemplateBuffer().ToArray();
                 File.WriteAllBytes(saveTemplateDialog.FileName, _subject.GetTemplateBuffer().ToArray());
             }
         }
@@ -190,6 +202,36 @@ namespace IcaoFaceCaptureCamera
             {
                 _segmentedFace.Image.Save(saveImageDialog.FileName);
             }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fvPreview_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gbFaceTypes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fvUpPitch_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nViewZoomSlider1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,7 +21,7 @@ namespace IcaoFaceCaptureCamera
             {
                 foreach (string component in Components.Split(new [] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    NLicense.ObtainComponents("/local", 5000, Components);
+                    NLicense.ObtainComponents("192.168.100.15", 6000, Components);
                 }
 
                 Application.EnableVisualStyles();

@@ -151,8 +151,11 @@ namespace IcaoFaceCaptureCamera
                     lblGlassesReflection.ForeColor = GetColorForConfidence(warnings, NIcaoWarnings.GlassesReflection, _attributes.GlassesReflectionConfidence);
 
                     lblRoll.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.RollLeft, NIcaoWarnings.RollRight);
+                    lblRoll.Text = string.Format("Roll: {0}", _attributes.Roll.ToString());
                     lblYaw.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.YawLeft, NIcaoWarnings.YawRight);
+                    lblYaw.Text = string.Format("Yaw : {0}", _attributes.Yaw.ToString());
                     lblPitch.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.PitchDown, NIcaoWarnings.PitchUp);
+                    lblPitch.Text = string.Format("Pitch: {0}", _attributes.Pitch.ToString());
                     lblTooClose.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.TooNear);
                     lblTooFar.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.TooFar);
                     lblTooNorth.ForeColor = GetColorForFlags(warnings, NIcaoWarnings.TooNorth);
@@ -261,5 +264,15 @@ namespace IcaoFaceCaptureCamera
         }
 
         #endregion
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTooClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
