@@ -174,6 +174,7 @@ namespace IcaoFaceCaptureCamera
                 Utils.ShowException(ex);
                 lblStatus.Text = string.Empty;
                 EnableControls(false);
+                var a = 8;
             }
         }
 
